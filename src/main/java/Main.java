@@ -18,8 +18,11 @@ public class Main {
     public static void main(String...args){
 
         try {
+
+	    //el archivo que shopify exporto
             CSVReader reader = new CSVReader(new FileReader("/home/jorge/Downloads/db.csv"));
-            CSVWriter writer = new CSVWriter(new FileWriter("/home/jorge/Downloads/result.csv"));
+            //El archivo donde se va a escribir la bdd modificada
+	    CSVWriter writer = new CSVWriter(new FileWriter("/home/jorge/Downloads/result.csv"));
 
             String [] nextLine;
 
@@ -45,6 +48,7 @@ public class Main {
 
                 if(!lineAsList.get(19).equals("")) {
                     Double doubleVal = Double.parseDouble(lineAsList.get(19));
+		    //La constante por la que se va a multiplicar el precio
                     doubleVal = doubleVal*1.16;
                     doubleVal = Double.valueOf(Math.round(doubleVal));
 
